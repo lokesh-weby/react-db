@@ -24,40 +24,38 @@ function App() {
     });
  //back-end:url (it sents data from frontend -> backend server) 
 
- //  axios.post('https://react-db-eta.vercel.app/',{email: Email,password:Password})
- // .then((data)=>{ 
- //  alert(data);
- // }).catch((err)=>{
- // if(err){
- //  toast.error(`Failed to Connect`, {
- //    position: "top-center",
- //    autoClose: 5000,
- //    hideProgressBar: false,
- //    closeOnClick: true,
- //    pauseOnHover: true,
- //    draggable: true,
- //    progress: undefined,
- //    theme: "dark",
- //    transition: Bounce,
- //    });
- // }
- // else{
- //  toast("network issue")
- // }
- // });
-   axios({
-  method: 'post',  
-withCredentials: false,
-  url: 'https://react-db-eta.vercel.app/', 
-     { email: 'Email',password: 'Password' }
+  axios.post('https://react-db-eta.vercel.app/',{{email: Email,password:Password}},withCredentials:false)
+ .then((data)=>{ 
+  alert(data);
+ }).catch((err)=>{
+ if(err){
+  toast.error(`Failed to Connect`, {
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "dark",
+    transition: Bounce,
+    });
+ }
+ else{
+  toast("network issue")
+ }
+ });
+//    axios({
+//   method: 'post',  
+//   url: 'https://react-db-eta.vercel.app/',  { email: 'Email',password: 'Password' }
 
-})
-  .then(response => {
-    console.log(response.data);
-  })
-  .catch(error => {
-    console.error('Error:', error);
-  });
+// })
+//   .then(response => {
+//     console.log(response.data);
+//   })
+//   .catch(error => {
+//     console.error('Error:', error);
+//   });
 
 
  }
