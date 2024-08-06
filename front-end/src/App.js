@@ -47,7 +47,7 @@ function App() {
  // });
    axios({
   method: 'post',
-  url: 'https://react-db-eta.vercel.app/', data:{ email: 'Email',password: 'Password' },
+  url: 'https://react-db-eta.vercel.app/', data:{ email: 'Email',password: 'Password' }, timeout: 5000,
   withCredentials: false
 })
   .then(response => {
