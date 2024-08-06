@@ -29,7 +29,7 @@ function App() {
   alert(data);
  }).catch((err)=>{
  if(err){
- console,log(err.message)
+ console.log(err.message)
  }
  else{
   toast("network issue")
@@ -55,9 +55,9 @@ function App() {
       <div className='input'>
       <center>LOGIN</center>
       <label >Email</label>
-      <input type='email' onChange={(e)=>setEmail(e.target.value)} required/>
+      <input type='email' onChange={(e)=>setEmail(e.target.value)} placeholder='abc@gmail.com' required/>
       <label>Password</label>
-      <input type='password' onChange={(e)=>setPass(e.target.value)}  required/>
+      <input type='password' onChange={(e)=>setPass(e.target.value)} placeholder='Password'  required/>
       </div>
       <div className='btn'>
       <button type='submit'>Submit</button>
