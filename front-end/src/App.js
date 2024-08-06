@@ -2,21 +2,46 @@
 import { useState } from 'react';
 import './App.css';
 import axios  from 'axios';
+import { toast,Bounce } from 'react-toastify';
+
 
 function App() {
   const [Email,setEmail]=useState('');
   const [Password,setPass]=useState('');
  const submitHandler=async(e)=>{
   e.preventDefault();
+
+  toast.success(`Data Submitted`, {
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "dark",
+    transition: Bounce,
+    });
  //back-end:url (it sents data from frontend -> backend server) 
- await axios.post('http://localhost:4080/',{email: Email,password:Password},alert("Inserted into database"))
+ await axios.post('http://localhost:4080/',{email: Email,password:Password})
  .then((data)=>{ 
   alert(data);
  }).catch((err)=>{
  if(err){
-  alert(err.message)
- }else{
-  alert("Thank you")
+  toast.error(`Failed to Connect`, {
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "dark",
+    transition: Bounce,
+    });
+ }
+ else{
+  toast("network issue")
  }
  });
 
