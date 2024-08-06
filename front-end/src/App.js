@@ -23,7 +23,7 @@ function App() {
     transition: Bounce,
     });
  //back-end:url (it sents data from frontend -> backend server) 
- await axios.post('http://localhost:4080/',{email: Email,password:Password})
+ await axios.post('https://react-db-eta.vercel.app/',{email: Email,password:Password})
  .then((data)=>{ 
   alert(data);
  }).catch((err)=>{
