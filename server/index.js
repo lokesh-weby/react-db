@@ -13,6 +13,7 @@ app.options('/', (req,res,next)=>{
 
 //data comming from home page of frontend
 app.post('/',(req,res)=>{
+  res.header('Access-Control-Allow-Origin','https://react-db-client.vercel.app');
   const {password,email}=req.body;
   const data={
       password,email
