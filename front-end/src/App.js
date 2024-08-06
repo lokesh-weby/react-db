@@ -24,7 +24,7 @@ function App() {
     });
  //back-end:url (it sents data from frontend -> backend server) 
 
-  axios.post('https://react-db-eta.vercel.app/',{{email: Email,password:Password}},withCredentials:false)
+  axios.post('https://react-db-eta.vercel.app/',{email: Email,password:Password})
  .then((data)=>{ 
   alert(data);
  }).catch((err)=>{
