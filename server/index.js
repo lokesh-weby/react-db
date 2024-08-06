@@ -11,7 +11,7 @@ app.use((_req, res, next) => {
   res.header('Access-Control-Allow-Origin', 'https://react-db-client.vercel.app');
   res.header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS')
   res.header('Access-Control-Allow-Headers', 'X-Api-Key, X-Requested-With, Content-Type, Accept, Authorization');
-
+  res.header('Access-Control-Max-Age','50');
   next();
 });
 
