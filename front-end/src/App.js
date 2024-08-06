@@ -29,17 +29,7 @@ function App() {
   alert(data);
  }).catch((err)=>{
  if(err){
-  toast.error(`Failed to Connect`, {
-    position: "top-center",
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    theme: "dark",
-    transition: Bounce,
-    });
+ console,log(err.message)
  }
  else{
   toast("network issue")
