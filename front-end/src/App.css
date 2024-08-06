@@ -10,7 +10,7 @@
   justify-content: space-evenly;
   transition: all 150ms;
   &:hover{
-    scale: 1.5;
+    scale: 1.2;
     transform: skewX(0deg);
   }
   
