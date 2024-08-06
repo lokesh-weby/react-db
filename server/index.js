@@ -12,7 +12,6 @@ app.use(cors({
   //frontend (receive data from frontend)
   methods:["POST","GET"],
 
-
 }));
 //data comming from home page of frontend
 app.post('/',(req,res)=>{
@@ -30,8 +29,8 @@ app.post('/',(req,res)=>{
 
     
     con.query("insert into information (username,password) values (?,?)",[data.email,data.password],(err,result)=>{
-      if(err){
-        console.log(err);
+      if(!err){
+        console.log("inserted");
       }
       console.log(result);
     })
