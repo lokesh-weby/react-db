@@ -8,12 +8,12 @@ const app=express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.options('/', (req,res,next)=>{
-  res.header('Access-Control-Allow-Origin','https://react-db-client.vercel.app');
+  res.header('Access-Control-Allow-Origin','https://react-db-client.vercel.app/');
   )
 
 //data comming from home page of frontend
 app.post('/',(req,res)=>{
-  res.header('Access-Control-Allow-Origin','https://react-db-client.vercel.app');
+  res.header('Access-Control-Allow-Origin','https://react-db-client.vercel.app/');
   const {password,email}=req.body;
   const data={
       password,email
