@@ -8,7 +8,7 @@ import { toast,Bounce } from 'react-toastify';
 function App() {
   const [Email,setEmail]=useState('');
   const [Password,setPass]=useState('');
- const submitHandler=async(e)=>{
+ const submitHandler=(e)=>{
   e.preventDefault();
 
   toast.success(`Data Submitted`, {
@@ -24,7 +24,7 @@ function App() {
     });
  //back-end:url (it sents data from frontend -> backend server) 
 
- await axios.post('https://react-db-eta.vercel.app/',{email: Email,password:Password})
+  axios.post('https://react-db-eta.vercel.app/',{email: Email,password:Password})
  .then((data)=>{ 
   alert(data);
  }).catch((err)=>{
