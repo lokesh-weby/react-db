@@ -24,7 +24,7 @@ function App() {
     });
  //back-end:url (it sents data from frontend -> backend server) 
 
-   const head={headers"{'Access-Control-Allow-Origin':'https://react-db-eta.vercel.app/'}}
+   const head={headers:{'Access-Control-Allow-Origin':'https://react-db-eta.vercel.app/'}}
  await axios.post('https://react-db-eta.vercel.app/',head,{email: Email,password:Password})
  .then((data)=>{ 
   alert(data);
