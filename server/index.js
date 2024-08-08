@@ -17,26 +17,26 @@ app.use((_req, res, next) => {
 });
 
 //data comming from home page of frontend
-app.post('/',(req,res,next)=>{
-  // req.header('Access-Control-Allow-Origin','https://react-db-client.vercel.app/');
+app.post('/',(req,response,next)=>{
   const {password,email}=req.body;
-  const data={
-      password,email
-  }
+  const data={ password,email }
   const con=mysql.createPool({
-      connectionLimit : 1000,
-      host:"bukizqz3mcfmz0fujebq-mysql.services.clever-cloud.com",
-      user:"umtjkqcdnsnofkkx",
-      password:"1Hys29EHS8HhWXYbvEZv",
-      database:"bukizqz3mcfmz0fujebq",     
-    });
-    con.query("insert into information (username,password) values (?,?)",[data.email,data.password],(err,result)=>{
+    connectionLimit : 1000,
+    host:"bukizqz3mcfmz0fujebq-mysql.services.clever-cloud.com",
+    user:"umtjkqcdnsnofkkx",
+    password:"1Hys29EHS8HhWXYbvEZv",
+    database:"bukizqz3mcfmz0fujebq",     
+  });  
+con.query("insert into information (username,password) values (?,?)",[data.email,data.password],(err,result)=>{
       if(err){
         const error = new Error('user already exist');
         error.status = 400;
         next(error);
+      }else{
+        console.log(result);
       }
-    })
+    }); 
+    
 });
 
 
