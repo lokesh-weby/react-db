@@ -11,7 +11,7 @@ function App() {
  const submitHandler=(e)=>{
   e.preventDefault();
 
-  toast.success(`Data Submitted`, {
+  toast.success(`Thank You..`, {
     position: "top-center",
     autoClose: 5000,
     hideProgressBar: false,
@@ -23,31 +23,27 @@ function App() {
     transition: Bounce,
     });
  //back-end:url (it sents data from frontend -> backend server) 
-
+try{
   axios.post('https://react-db-eta.vercel.app/',{email: Email,password:Password})
- .then((data)=>{ 
-  alert(data);
- }).catch((err)=>{
- if(err){
- console.log(err.message)
- }
- else{
-  toast("network issue")
- }
- });
-//    axios({
-//   method: 'post',  
-//   url: 'https://react-db-eta.vercel.app/',  { email: 'Email',password: 'Password' }
-
-// })
-//   .then(response => {
-//     console.log(response.data);
-//   })
-//   .catch(error => {
-//     console.error('Error:', error);
-//   });
-
-
+}
+   catch(error){
+      if(Eror){
+    toast.error(`Email ID Already Exist`, {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      transition: Bounce
+     });
+   }
+     else{
+       toast.success("Form submmited successfully")
+     }
+   }
  }
   return (
     <div className="App">
