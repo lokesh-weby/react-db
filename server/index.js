@@ -17,7 +17,7 @@ app.use((_req, res, next) => {
 });
 
 //data comming from home page of frontend
-app.post('/',(req,res)=>{
+app.post('/',(req,res,next)=>{
   // req.header('Access-Control-Allow-Origin','https://react-db-client.vercel.app/');
   const {password,email}=req.body;
   const data={
@@ -30,13 +30,12 @@ app.post('/',(req,res)=>{
       password:"1Hys29EHS8HhWXYbvEZv",
       database:"bukizqz3mcfmz0fujebq",     
     });
-
-    
     con.query("insert into information (username,password) values (?,?)",[data.email,data.password],(err,result)=>{
-      if(!err){
-        console.log("inserted");
+      if(err){
+        const error = new Error('user already exist');
+        error.status = 400;
+        next(error);
       }
-      console.log(result);
     })
 });
 
