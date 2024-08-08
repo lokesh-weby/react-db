@@ -45,14 +45,14 @@ try{
     <div className="App">
       <form onSubmit={submitHandler} className='container'>
       <div className='input'>
-      <center>LOGIN</center>
+      <center>REGISTRATION FORM</center>
       <label >Email</label>
       <input type='email' onChange={(e)=>setEmail(e.target.value)} placeholder='abc@gmail.com' required/>
       <label>Password</label>
       <input type='password' onChange={(e)=>setPass(e.target.value)} placeholder='Password'  required/>
       </div>
       <div className='btn'>
-      <button type='submit'>Submit</button>
+      <button type='submit'>Register</button>
       <button type='reset'>Reset</button>
       </div>
       </form>
