@@ -27,7 +27,6 @@ try{
   axios.post('https://react-db-eta.vercel.app/',{email: Email,password:Password})
 }
    catch(error){
-      if(error){
     toast.error(`Email ID Already Exist`, {
       position: "top-center",
       autoClose: 3000,
@@ -39,10 +38,6 @@ try{
       theme: "dark",
       transition: Bounce
      });
-   }
-     else{
-       toast.success("Form submmited successfully")
-     }
    }
  }
   return (
