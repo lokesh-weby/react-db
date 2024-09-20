@@ -3,12 +3,14 @@ import { useState } from 'react';
 import './App.css';
 import axios  from 'axios';
 import { toast,Bounce } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 
 function App() {
   const [Email,setEmail]=useState('');
   const [Password,setPass]=useState('');
  const submitHandler=(e)=>{
+  console.log(Email);
   e.preventDefault();
 
   toast.success(`Thank You..`, {
@@ -24,7 +26,7 @@ function App() {
     });
  //back-end:url (it sents data from frontend -> backend server) 
 try{
-  axios.post('https://react-db-eta.vercel.app/',{email: Email,password:Password})
+  axios.post('http://localhost:4080/',{email: Email,password:Password})
 }
    catch(error){
      console.log(error.message)
@@ -43,7 +45,12 @@ try{
  }
   return (
     <div className="App">
-      <form onSubmit={submitHandler} className='container'>
+       <div className='float shadow-lg'>
+      <Link to="/user">
+      <i class="bi bi-person-lines-fill"/>
+      </Link>
+     </div>
+      <form onSubmit={submitHandler} className='wrapper'>
       <div className='input'>
       <center>REGISTRATION FORM</center>
       <label >Email</label>
