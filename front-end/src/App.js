@@ -7,6 +7,18 @@ import { Link } from 'react-router-dom';
 
 
 function App() {
+
+  function showPass(){
+    var reveal=document.getElementById("passReveal")
+   if(reveal.type==="password"){
+      reveal.type="text"
+   }
+   else{
+      reveal.type="password"
+   }
+    
+    
+  }
   const [Email,setEmail]=useState('');
   const [Password,setPass]=useState('');
  const submitHandler=(e)=>{
@@ -53,11 +65,17 @@ try{
      </div>
       <form onSubmit={submitHandler} className='wrapper'>
       <div className='input'>
-      <center>REGISTRATION FORM</center>
+      <h4>REGISTRATION FORM</h4>
       <label >Email</label>
       <input type='email' onChange={(e)=>setEmail(e.target.value)} placeholder='abc@gmail.com' required/>
       <label>Password</label>
-      <input type='password' onChange={(e)=>setPass(e.target.value)} placeholder='Password'  required/>
+      <input type='password' onChange={(e)=>setPass(e.target.value)} placeholder='Password' minLength={8} maxLength={8} id="passReveal" required/>
+      <div>
+      <input type='checkbox' id="pass" onClick={()=>showPass()}/>
+      <label htmlFor='pass'>Show Password</label>
+
+      </div>
+      
       </div>
       <div className='btn'>
       <button type='submit'>Register</button>

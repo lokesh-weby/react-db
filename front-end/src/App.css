@@ -15,8 +15,10 @@
   }
   
 }
+input[type="checkbox"]{
+  margin-inline-end: 10px;
+}
 input{
-  width: 100%;
   outline: none;
   border: unset;
   border-bottom: 1px solid black;
