@@ -7,7 +7,7 @@ import './App.css';
 
   const [data,setDa]=useState(" ")
    function fetched() {
-   axios.get("http://localhost:4080/users")
+   axios.get("https://react-db-eta.vercel.app/user")
    .then(r=>setDa(r.data))   
   } 
  
