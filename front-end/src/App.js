@@ -48,6 +48,7 @@ try{
        <div className='float shadow-lg'>
       <Link to="/user">
       <i class="bi bi-person-lines-fill"/>
+      <p>Users</p>
       </Link>
      </div>
       <form onSubmit={submitHandler} className='wrapper'>
