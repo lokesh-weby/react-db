@@ -26,6 +26,7 @@ const con=mysql.createPool({
 app.get('/users',(req,res)=>{
   con.query("SELECT * FROM information",(err,result)=>{
     res.status(200).json(result)
+    res.json(result);
     
   })
 
