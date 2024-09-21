@@ -26,7 +26,7 @@ function App() {
     });
  //back-end:url (it sents data from frontend -> backend server) 
 try{
-  axios.post('http://localhost:4080/',{email: Email,password:Password})
+  axios.post('https://react-db-eta.vercel.app/',{email: Email,password:Password})
 }
    catch(error){
      console.log(error.message)
