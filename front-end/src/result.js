@@ -31,11 +31,13 @@ useEffect(()=>{
         {data===" "?<h5 className='text-center'>Loading...</h5>: 
         <table>
           <tr>
+            <th>S.no</th>
             <th>Email</th>
             <th>Password</th>
         </tr>
           {data.map((user,index) => (
         <tr className='d' key={index}>
+          <td>{index+1}</td>
           <td>{user.username}</td>
           <td className='text-center'>{user.password}</td>
         </tr>
