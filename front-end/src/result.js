@@ -23,6 +23,7 @@ useEffect(()=>{
       <Link to="/">
 
       <i class="bi bi-house"/>
+      <p>Home</p>
       </Link>
      </div>
     <h1 className='text-secondary'>Users</h1>
