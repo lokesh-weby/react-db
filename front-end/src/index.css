@@ -32,6 +32,11 @@ a{
     color: black;
     cursor: pointer;
   }
+  .float p{
+  font-size: 0.8rem;
+  margin: unset;
+  padding: unset;
+}
 }
 .float i{
   font-size: 2rem;
