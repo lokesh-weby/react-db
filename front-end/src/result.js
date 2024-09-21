@@ -14,7 +14,7 @@ import './App.css';
  
 useEffect(()=>{
   fetched()
-},[])
+},[data])
 
 
   return (
