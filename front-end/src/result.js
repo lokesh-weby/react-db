@@ -7,7 +7,7 @@ import './App.css';
 
   const [data,setDa]=useState(" ")
    function fetched() {
-   axios.get("/user")
+   axios.get("/users")
    .then(r=>setDa(r.data))   
   } 
  
